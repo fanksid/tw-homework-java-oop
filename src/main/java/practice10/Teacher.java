@@ -1,6 +1,7 @@
 package practice10;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -22,9 +23,9 @@ public class Teacher extends Person{
         if (classes == null || classes.size() == 0) {
             sIntroduce += " I teach No Class.";
         } else {
-            // TODO: classes的类型选择是否合适，是否可以通过选取合适的classes类型使得省略下面的排序过程
             StringBuilder sb = new StringBuilder();
             Object[] arr = classes.toArray();
+
             Arrays.sort(arr, (first, second) -> ((Klass)first).getNumber() - ((Klass)second).getNumber());
             for (int i = 0; i < arr.length; i++) {
                 if (i > 0) {
